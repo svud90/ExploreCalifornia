@@ -53,6 +53,10 @@ namespace ExploreCalifornia
                     throw new Exception("ERROR!");
                 await next();
             });
+            app.UseMvc(route =>
+            {
+                route.MapRoute("Default", "{controller=Home}/{action=Index}/{id?}");
+            });
             app.UseFileServer();
         }
     }
