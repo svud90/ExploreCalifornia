@@ -29,6 +29,7 @@ namespace ExploreCalifornia
             services.AddTransient<FeatureToggles>(x => new FeatureToggles {
                 EnableDeveloperExceptions = configuration.GetValue<bool>("FeatureToggles:EnableDeveloperExceptions")
             });
+            services.AddMvc();
         }
 
         // This method gets called by the runtime. Use this method to configure the HTTP request pipeline.

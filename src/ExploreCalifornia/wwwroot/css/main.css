@@ -469,7 +469,7 @@ span.accent {
 }
 #siteNav li a:link, #siteNav li a:visited{
 	display: block;
-	padding: 0 25px;
+	padding: 0 20px;
 	border-right: 2px solid #3c6b92;
 	font: 1.1em DejaVuSansCond, Arial, sans-serif;
 	text-transform: uppercase;
