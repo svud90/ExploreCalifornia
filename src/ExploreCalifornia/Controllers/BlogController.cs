@@ -4,6 +4,7 @@ using System.Linq;
 using System.Threading.Tasks;
 using Microsoft.AspNetCore.Mvc;
 using ExploreCalifornia.Models;
+using Microsoft.AspNetCore.Authorization;
 
 // For more information on enabling MVC for empty projects, visit http://go.microsoft.com/fwlink/?LinkID=397860
 
@@ -49,12 +50,13 @@ namespace ExploreCalifornia.Controllers
             return View(post);
         }
 
+        [Authorize]
         [Route("create")]
         public IActionResult Create()
         {
             return View();
         }
-
+        [Authorize]
         [HttpPost,Route("create")]
         public IActionResult Create(Post post)
         {
