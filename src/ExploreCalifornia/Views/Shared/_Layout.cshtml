@@ -62,18 +62,23 @@
                     <li>
                         @if (User.Identity.IsAuthenticated)
                         {
-                            <form id="logout" action="@Url.Action("Logout", "Account")" method="POST">
-                                <a href="javascript: $('#logout').submit()" class="last">
-                                    Logout
-                                    <br /><span class="tagline">@User.Identity.Name</span>
-                                </a>
-                            </form>
+                            <a href="@Url.Action("Index","Home")" title="Hi @User.Identity.Name">Welcome <br/> <span class="tagline">@User.Identity.Name</span> </a>
+                            <ul>
+                                <li><a href="@Url.Action("Create","Blog")" title="Write blog!">Write Blog</a></li>
+                                <li><form id="logout" action="@Url.Action("Logout", "Account")" method="POST">
+                                        <a href="javascript: $('#logout').submit()" class="last">Logout</a>
+                                    </form>
+                                </li>
+                            </ul>
+
                         }
                         else
                         {
-                            <a href="@Url.Action("Login", "Account")" title="log in" class="last">
-                                Login
-                            </a>
+                            <a href="@Url.Action("Login", "Account")" title="log in" class="last">Login<br/><span class="tagline">or New User</span></a>
+                            <ul>
+                                <li><a href="@Url.Action("Register","Account")" title="Register">Register</a></li>
+                            </ul>
+
                         }
                     </li>
                 </ul>
