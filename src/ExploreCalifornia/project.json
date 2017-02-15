@@ -46,6 +46,9 @@
   "publishOptions": {
     "include": [
       "wwwroot",
+      "**/*.cshtml",
+      "config.json",
+      "config.azure.json",
       "web.config"
     ]
   },
